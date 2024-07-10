@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+
+<body class="bg-zinc-900 font-[gilroy] selection:bg-black/30 selection:text-emerald-600">
+    <main class="container mx-auto w-full h-screen p-5">
+
+        <div class="flex justify-between items-baseline">
+            <h1 class="text-5xl mt-10 text-emerald-600"><%=filename %></h1>
+            <a href="/" class="text-emerald-600 underline-offset-2 underline">Go Back</a>
+        </div>
+
+        <div class="mt-20 text-white text-lg">
+            <p class="font-light"><%=fileData%></p>
+        </div>
+    </main>
+</body>
+
+</html>

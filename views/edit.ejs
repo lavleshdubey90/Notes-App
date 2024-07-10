@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+
+<body class="bg-zinc-900 font-[gilroy] selection:bg-black/30 selection:text-emerald-600">
+    <main class="container mx-auto w-full h-screen p-5">
+
+        <div class="flex justify-between items-baseline">
+            <h1 class="text-5xl mt-10 text-emerald-600">
+                <%=filename %>
+            </h1>
+            <a href="/" class="text-emerald-600 underline-offset-2 underline">Go Back</a>
+        </div>
+
+        <div class="mt-20 text-white">
+
+            <form action="/edit" method="post" class="text-white caret-emerald-600 mt-20">
+                <input type="text" name="title" id="title" class="w-full outline-none py-2 px-3 rounded-md bg-zinc-800" value="<%=filename%>" >
+                <input type="text" name="oldTitle" id="title" class="w-full hidden outline-none py-2 px-3 rounded-md bg-zinc-800" value="<%=filename%>" >
+                <textarea name="textarea" id="textarea" class="w-full h-40 mt-3 outline-none py-2 px-3 rounded-md bg-zinc-800" placeholder="Write your notes..."><%= fileData %></textarea>
+                <input type="submit" value="Update" class="px-5 font-[poppins] py-2 bg-yellow-600 text-white rounded-md mt-3 cursor-pointer hover:bg-yellow-800">
+            </form>
+
+        </div>
+    </main>
+</body>
+
+</html>

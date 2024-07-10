@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+
+<body class="bg-zinc-900 font-[gilroy] selection:bg-black/30 selection:text-emerald-600">
+    <main class="container mx-auto w-full h-screen p-5">
+        <h1 class="text-5xl mt-10 text-emerald-600">Notes App</h1>
+        <form action="/create" method="post" class="text-white caret-emerald-600 mt-20">
+            <input type="text" name="title" id="title" class="w-full outline-none py-2 px-3 rounded-md bg-zinc-800"
+                placeholder="Title...">
+            <textarea name="textarea" id="textarea" class="w-full h-40 mt-3 outline-none py-2 px-3 rounded-md bg-zinc-800"
+                placeholder="Write your notes..."></textarea>
+            <input type="submit"  value="Create Task"
+                class="px-5 font-[poppins] py-2 bg-emerald-600 text-white rounded-md mt-3 cursor-pointer hover:bg-emerald-800">
+        </form>
+
+        <div class="mt-10">
+            <div class="flex flex-wrap mx-auto gap-3">
+
+                <% if(files.length > 0) { %>
+                    <% files.forEach((file)=>{ %>
+                        <div class="px-3 py-4 text-white w-80 border border-emerald-600 rounded-md">
+                            <h2 class="text-2xl font-medium"><%= file %></h2>
+                            <div class="mt-5 flex justify-between items-center">
+                                <a href="/file/<%=file%>" class="inline-block text-emerald-600 font-[poppins]">Read More.</a>
+                                <span class="flex gap-x-4 items-center">
+                                    <a href="/edit/<%=file%>" class="inline-block text-yellow-600 font-[poppins]">Edit</a>
+                                    <a href="/delete/<%=file%>" class="inline-block text-red-600 font-[poppins]">Delete</a>
+                                </span>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                <h3 class="text-zinc-600">No tasks yet.</h3>
+                <% } %>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
